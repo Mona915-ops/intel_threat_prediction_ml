@@ -1,0 +1,186 @@
+/* -------- Base Styling -------- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #a6c8ff, #fcd4f5);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* -------- Header -------- */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  background: transparent;
+  width: 100%;
+  justify-content: center;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* -------- Main Container -------- */
+.container {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  padding: 30px 40px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 420px;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+}
+
+/* Expand container on wider screens */
+@media screen and (min-width: 1000px) {
+  .container {
+    max-width: 550px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .container h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/* -------- Upload Section -------- */
+h2 {
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.drop-zone {
+  border: 2px dashed #aaa;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.drop-zone.dragover {
+  background-color: #e0eaff;
+  border-color: #4a90e2;
+}
+
+#file-name {
+  color: #555;
+  font-weight: 500;
+  margin: 0;
+}
+
+.or-text {
+  color: #888;
+  margin: 10px 0;
+}
+
+/* -------- Browse Button -------- */
+#browse-btn {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 5px;
+  transition: background 0.3s;
+}
+
+#browse-btn:hover {
+  background-color: #3b78c3;
+}
+
+/* -------- Upload & Predict Button -------- */
+.btn {
+  background-color: #7a4dd4;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  display: block;
+  margin: 0 auto;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #693dc2;
+}
+
+/* -------- Prediction Results -------- */
+.results {
+  margin-top: 25px;
+  background-color: #f0f6ff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+  width: 100%;
+}
+
+.results h3 {
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+  color: #4a4a4a;
+}
+
+.results ul {
+  list-style: none;
+  padding: 0;
+}
+
+.results li {
+  padding: 6px 0;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 0.95rem;
+}
+/* -------- Prediction Highlight -------- */
+.benign {
+  color: #1a8f1a;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.malicious {
+  color: #d32f2f;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* -------- Graph Placeholder -------- */
+.graph-placeholder {
+  margin-top: 25px;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #f3f3f3;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* -------- Footer -------- */
+.footer {
+  margin-top: 30px;
+  padding: 12px;
+  font-size: 0.9rem;
+  color: #807480;
+  text-align: center;
+}
