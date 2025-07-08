@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Intel Threat Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Intel Logo" class="logo">
+        <span class="title">Intel Threat Detection</span>
+    </div>
+
+    <!-- Upload Container -->
+    <div class="container">
+        <h2>Upload Network Data (.csv)</h2>
+
+        <form action="/predict" method="POST" enctype="multipart/form-data">
+            <div class="drop-zone" id="drop-zone">
+                <p>Drag & drop your file here</p>
+                <p class="or-text">or</p>
+                <input type="file" name="file" id="file-input" accept=".csv" hidden>
+                <button type="button" id="browse-btn">Browse File</button>
+                <p id="file-name"></p>
+            </div>
+
+            <button type="submit" class="btn">Predict</button>
+        </form>
+
+        {% if prediction %}
+        <div class="results">
+            <h3>Prediction Result</h3>
+            <ul>
+                <li class="{% if prediction == 'BENIGN' %}benign{% else %}malicious{% endif %}">
+                    {{ prediction }}
+                </li>
+            </ul>
+        </div>
+
+        {% endif %}
+    </div>
+
+    <div class="footer">
+        © 2025 Intel Internship · Mohana Priya
+    </div>
+
+    <!-- JS file link -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
